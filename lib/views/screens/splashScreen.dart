@@ -41,6 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
               height: 200,
             ),
             Spacer(),
+            Spacer(),
             const Text(
               "Get your product!!",
               style: const TextStyle(fontSize: 16),
@@ -48,6 +49,7 @@ class _SplashScreenState extends State<SplashScreen> {
             SizedBox(
               height: 15,
             ),
+            Spacer(),
             Transform.scale(
               scale: 0.5,
               child: CircularProgressIndicator(),

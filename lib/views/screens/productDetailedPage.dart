@@ -15,7 +15,14 @@ class ProductDetailedPage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back_ios),
+        ),
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -30,14 +37,14 @@ class ProductDetailedPage extends StatelessWidget {
           ),
           Spacer(),
           Container(
-            height: 482,
+            height: 465,
             width: double.infinity,
             padding: const EdgeInsets.all(15),
             decoration: const BoxDecoration(
               color: Color(0XFF09324B),
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30),
+                topLeft: Radius.circular(40),
+                topRight: Radius.circular(40),
               ),
             ),
             child: Padding(

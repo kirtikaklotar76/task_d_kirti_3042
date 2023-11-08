@@ -26,11 +26,19 @@ class _HomePageState extends State<HomePage> {
             child: Row(
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(
+                      MyRoutes.favouritePage,
+                    );
+                  },
                   icon: Icon(Icons.favorite),
                 ),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(
+                      MyRoutes.cartPage,
+                    );
+                  },
                   icon: const Icon(Icons.shopping_cart),
                 ),
               ],
@@ -64,87 +72,90 @@ class _HomePageState extends State<HomePage> {
                         },
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.grey.shade300,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Column(
-                                  children: [
-                                    const SizedBox(
-                                      height: 10,
-                                    ),
-                                    Center(
-                                      child: SizedBox(
-                                        height: 150,
-                                        width: 200,
-                                        child: Image.network(
-                                          productModal.thumbnail,
-                                          fit: BoxFit.fill,
+                          child: GridTile(
+                            child: Column(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey.shade300,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      Center(
+                                        child: SizedBox(
+                                          height: 150,
+                                          width: 200,
+                                          child: Image.network(
+                                            productModal.thumbnail,
+                                            fit: BoxFit.fill,
+                                          ),
                                         ),
                                       ),
+                                    ],
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 4,
+                                ),
+                                Row(
+                                  children: [
+                                    const SizedBox(
+                                      width: 6,
+                                    ),
+                                    Text(
+                                      productModal.title,
+                                      maxLines: 1,
+                                      style: TextStyle(
+                                          fontSize:
+                                              productModal.title.length > 10
+                                                  ? 8
+                                                  : 12),
+                                      overflow: TextOverflow.fade,
+                                    ),
+                                    const Spacer(),
+                                    Text(
+                                      "₹${productModal.price}",
+                                      style: const TextStyle(fontSize: 15),
+                                    ),
+                                    const SizedBox(
+                                      width: 6,
                                     ),
                                   ],
                                 ),
-                              ),
-                              const SizedBox(
-                                height: 4,
-                              ),
-                              Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 6,
-                                  ),
-                                  Text(
-                                    productModal.title,
-                                    maxLines: 1,
-                                    style: TextStyle(
-                                        fontSize: productModal.title.length > 10
-                                            ? 8
-                                            : 12),
-                                    overflow: TextOverflow.fade,
-                                  ),
-                                  const Spacer(),
-                                  Text(
-                                    "₹${productModal.price}",
-                                    style: const TextStyle(fontSize: 15),
-                                  ),
-                                  const SizedBox(
-                                    width: 6,
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 2,
-                              ),
-                              Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 6,
-                                  ),
-                                  Text(
-                                    productModal.category,
-                                    style: const TextStyle(fontSize: 15),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 2,
-                              ),
-                              Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 6,
-                                  ),
-                                  // Text(
-                                  //   "${productModal.discountPercentage}%",
-                                  //   style: const TextStyle(fontSize: 15),
-                                  // ),
-                                ],
-                              ),
-                            ],
+                                const SizedBox(
+                                  height: 2,
+                                ),
+                                Row(
+                                  children: [
+                                    const SizedBox(
+                                      width: 6,
+                                    ),
+                                    Text(
+                                      productModal.category,
+                                      style: const TextStyle(fontSize: 15),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 2,
+                                ),
+                                Row(
+                                  children: [
+                                    const SizedBox(
+                                      width: 6,
+                                    ),
+                                    // Text(
+                                    //   "${productModal.discountPercentage}%",
+                                    //   style: const TextStyle(fontSize: 15),
+                                    // ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       );
